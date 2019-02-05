@@ -1,0 +1,33 @@
+show dbs; //mostra os bancos de dados
+
+use curso_mongode; //primeiro procura o banco depois prepara a estrutura para criar, mas só passa a existir depois que inserirmos uma primeira informação
+
+db.dropDatabase;
+
+db.createCollection("alunos");
+
+db.alunos.save({Nome: "jorge"})
+
+db.getCollectionNames()
+
+db.alunos.drop();
+
+db.getCollectionNames();
+
+db.alunos.save({
+	nome: 'Danniel',
+	idade: 30,
+	sexo: 'M',
+	cpf: '123.456.789-12',
+	rg: '123.456.789',
+	matricula: 'asdf1234'});
+
+Operadores de compração:
+
+Operador SQL		OPERADOR MONGO		Nome						OPERAÇÃO
+	 =				$eq					Equals						É igual a 
+	 >				$gt					Greater Than				É maior que
+	 >=				$gte				Greater Than or Equal		É maior ou igual a
+	 <				$lt					Less Than					É menor que
+	 <=				$ltr				Less Than or equal			É menor ou igual a
+	 != / <>		$ne					Not Equal					É diferente de
