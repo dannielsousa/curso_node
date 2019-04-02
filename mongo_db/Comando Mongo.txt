@@ -29,5 +29,51 @@ Operador SQL		OPERADOR MONGO		Nome						OPERAÇÃO
 	 >				$gt					Greater Than				É maior que
 	 >=				$gte				Greater Than or Equal		É maior ou igual a
 	 <				$lt					Less Than					É menor que
-	 <=				$ltr				Less Than or equal			É menor ou igual a
+	 <=				$lte				Less Than or equal			É menor ou igual a
 	 != / <>		$ne					Not Equal					É diferente de
+	 
+Traz o ultimo documento inserido dentro da colection
+db.alunos.findOne()
+
+Traz todos os documentos da colection
+db.alunos.find()
+db.alunos.find.pretty() //identa as informações
+
+nomde = Danniel
+
+db.alunos.find({ nome: {$eq: "Danniel"}})
+
+AND/OR
+AND:
+db.alunos.find({ sexo: {$eq: 'F'}, idade: {$gt: 30} })
+
+OR:
+db.alunos.find({
+	$or: [
+		{nome: {$eq: 'Maria'}},
+		{nome: {$eq: 'Danniel'}}
+	]})
+	
+update()
+save()
+
+update(
+	{parametros para atualização},
+	{$set},
+	{multi: true}
+);
+
+save (
+	_id: xxxxxx
+)
+
+remove({criterio de exclusão}, 0/1)
+o 0/1 é false/true para remover todos ou não
+
+remove {
+	{nome: {$eq: 'Maria'}}
+}
+
+remove (
+	idade: {$gt:30}
+)
